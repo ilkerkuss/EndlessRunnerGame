@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 1987160227669533799}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_04:pCube4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

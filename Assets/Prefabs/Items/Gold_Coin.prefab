@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 1948344102519869021}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_095:group2
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 1948344102513491165}
   m_Layer: 0
   m_Name: Gold_Coin
-  m_TagString: Item
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

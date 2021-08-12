@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1733169629585707718}
   m_Layer: 0
   m_Name: Cookie_Blocker
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +44,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1733169629585707718}
     m_Modifications:
+    - target: {fileID: 5516499490610207944, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5516499490610207960, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
       propertyPath: m_Name
       value: Xmas_toy (1)
@@ -166,6 +170,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6162723367875365060, guid: 20b7972ce8af8784a9d968536da4b91a, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6162723367875365076, guid: 20b7972ce8af8784a9d968536da4b91a, type: 3}
       propertyPath: m_Name
       value: Xmas_toy
@@ -184,6 +192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1733169629585707718}
     m_Modifications:
+    - target: {fileID: 5516499490610207944, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5516499490610207960, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
       propertyPath: m_Name
       value: Xmas_toy (2)
@@ -262,6 +274,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1733169629585707718}
     m_Modifications:
+    - target: {fileID: 5516499490610207944, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5516499490610207960, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
       propertyPath: m_Name
       value: Xmas_toy (4)
@@ -340,6 +356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1733169629585707718}
     m_Modifications:
+    - target: {fileID: 5516499490610207944, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5516499490610207960, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
       propertyPath: m_Name
       value: Xmas_toy (5)
@@ -418,6 +438,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1733169629585707718}
     m_Modifications:
+    - target: {fileID: 5516499490610207944, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5516499490610207960, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
       propertyPath: m_Name
       value: Xmas_toy (6)
@@ -496,6 +520,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1733169629585707718}
     m_Modifications:
+    - target: {fileID: 5516499490610207944, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5516499490610207960, guid: 73e3e418012e84f9382dc67e62d4d8e5, type: 3}
       propertyPath: m_Name
       value: Xmas_toy (3)
