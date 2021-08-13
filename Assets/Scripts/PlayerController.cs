@@ -10,14 +10,14 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider _chrCollider;
     [SerializeField] private LayerMask _groundLayer;
     private bool _isGrounded;
-    private Vector3 _direction;
 
-    [SerializeField] private float _forwardSpeed = 0f;
+    [SerializeField] private float _forwardSpeed = 5f;
+    private float _playerMaxSpeed = 20f;
+
     private float _laneDistance = 4f;
-
     private int _movementLane = 1; //0:left 1:middle 2:right
 
-    [SerializeField] private float _jumpForce = 3f;
+    [SerializeField] private float _jumpForce = 5f;
     private float _gravityForce = -9.81f;
 
     private Vector3 _playerPos;
@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 firstPressPos;
     private Vector2 secondPressPos;
     private Vector2 currentSwipe;
+
+    private Animator _playerAnimator;
 
     //[SerializeField]private GameObject _startPoint;
 
@@ -45,12 +47,15 @@ public class PlayerController : MonoBehaviour
     {
         //IsGrounded
         _isGrounded = Physics.CheckSphere(transform.position, 1f, _groundLayer);
-
+        
         Debug.Log("Yerde mi:" + _isGrounded);
 
-        if (!_isDead)
+        if (!_isDead && LevelManager.IsGameStarted) // oyun baþlatýldý ve karakter ölü deðil ise
         {
             Move();
+            SpeedUpCharacter();
+            
+
         }
         //Debug.Log("öldü mü"+_isDead);
 
@@ -61,9 +66,11 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         _rb.velocity = Vector3.up * _jumpForce;
-       // transform.position += Vector3.up * _jumpForce;
         //_direction.y = _jumpForce;
         Debug.Log("Zýpla");
+
+        _playerAnimator.SetTrigger("IsJumped");
+
     }
 
 
@@ -73,16 +80,18 @@ public class PlayerController : MonoBehaviour
         Debug.Log("kay kay");
         yield return new WaitForSeconds(0.25f / Time.timeScale);
 
-        //_chrCollider.center = new Vector3(0, -0.01f, 0);
+        _playerAnimator.SetBool("IsSlide", true);
+        _chrCollider.center = new Vector3(0, -0.01f, 0);
         _chrCollider.height = 0;
 
+        
+
         yield return new WaitForSeconds((1.5f - 0.25f) / Time.timeScale);
-
-
 
         _chrCollider.center = Vector3.zero;
         _chrCollider.height = 0.032f;
 
+        _playerAnimator.SetBool("IsSlide", false);
     }
 
 
@@ -93,10 +102,15 @@ public class PlayerController : MonoBehaviour
             //_direction.z = 0;
             _rb.velocity = Vector3.zero;
             _isDead = true;
+            _playerAnimator.SetBool("IsRunning",false);
 
             LevelManager.Instance.ShowGameOver();
         }
         if (hit.collider.CompareTag("Coin"))
+        {
+            Destroy(hit.gameObject);
+        }
+        if (hit.collider.CompareTag("Item"))
         {
             Destroy(hit.gameObject);
         }
@@ -133,13 +147,13 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
+    
     private void MoveCharacter()
     {
         // _chrController.Move(_direction * Time.deltaTime);
 
-        var movement = _direction * _forwardSpeed;
-        _rb.velocity = movement;
+        //var movement = _direction * _forwardSpeed;
+        //_rb.velocity = movement;
 
         /*
         if (Input.GetMouseButton(0))
@@ -175,7 +189,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            _direction.y += _gravityForce * Time.deltaTime;
+            //_direction.y += _gravityForce * Time.deltaTime;
         }
 
 
@@ -231,14 +245,15 @@ public class PlayerController : MonoBehaviour
     public void Init()
     {
         Debug.Log("PlayerController INIT");
+        _forwardSpeed = 5f;
         _rb = GetComponent<Rigidbody>();
         _isDead = false;
         _playerPos = transform.position;
 
-
-        //_chrController = GetComponent<CharacterController>();
         _chrCollider = GetComponent<CapsuleCollider>();
-       //_direction.z = _forwardSpeed;
+
+        _playerAnimator = GetComponent<Animator>();
+
     }
 
     private void Move()
@@ -248,20 +263,23 @@ public class PlayerController : MonoBehaviour
         //_rb.velocity = moveDir;
         transform.position += moveDir;
 
+        _playerAnimator.SetBool("IsRunning", true);
+
+
         if (Input.GetMouseButtonDown(0))
         {
-            //save began touch 2d point
+            //Týklama baþlangýç pozisyonu
             firstPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         }
         if (Input.GetMouseButtonUp(0))
         {
-            //save ended touch 2d point
+            //Týklama bitiþ pozisyonu
             secondPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 
-            //create vector from the two points
+            //Baþlangýç ile bitiþ vektörü farký
             currentSwipe = new Vector2(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
 
-            //normalize the 2d vector
+
             currentSwipe.Normalize();
 
 
@@ -336,5 +354,13 @@ public class PlayerController : MonoBehaviour
 
 
         }
+    }
+    private void SpeedUpCharacter()
+    {
+        if (_forwardSpeed < _playerMaxSpeed)
+        {
+            _forwardSpeed += 0.1f * Time.deltaTime;
+        }
+        
     }
 }

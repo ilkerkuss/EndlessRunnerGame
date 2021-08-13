@@ -90,7 +90,7 @@ public class TileManager : MonoBehaviour
 
     public void ResetTiles() //activetile sýfýrla baþlangýç fonk çaðýr
     {
-        //Debug.Log("activeTile"+_activeTiles.Count);
+
         foreach (Transform child in _parentObject.transform)
         {
             Destroy(child.gameObject);

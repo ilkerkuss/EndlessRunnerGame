@@ -19,6 +19,6 @@ public class CameraController : MonoBehaviour
         transform.position = newPosition;
         //Debug.Log(_offset);
 
-        //cam 0,7,-56.5 player 0,3,-51.5
+
     }
 }
