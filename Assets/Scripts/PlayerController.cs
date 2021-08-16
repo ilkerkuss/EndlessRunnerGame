@@ -31,7 +31,12 @@ public class PlayerController : MonoBehaviour
 
     private Animator _playerAnimator;
 
-    //[SerializeField]private GameObject _startPoint;
+    // ItemController methodunu obje içine almak için
+    private IEnumerator _takeStar;
+
+    //player altýn sayýsý ve skoru
+    private int _scoreOfPlayer;
+    private int _coinsNumberOfPlayer;
 
     private void Awake()
     {
@@ -106,29 +111,42 @@ public class PlayerController : MonoBehaviour
 
             LevelManager.Instance.ShowGameOver();
         }
+
+
         if (hit.collider.CompareTag("Coin"))
         {
+            _coinsNumberOfPlayer += 1;
+            _scoreOfPlayer += 50;
+            //Debug.Log("alýnan altýn"+GetNumberOfCoin());
+            //Debug.Log("alýnan skor"+GetScoreOfPlayer());
             Destroy(hit.gameObject);
         }
+
+
         if (hit.collider.CompareTag("Item"))
         {
+            Debug.Log(hit.collider.name);
+            if (hit.collider.name.Equals("Shoe"))
+            {
+                ItemController.Instance.TakeShoe();
+
+            }
+            if (hit.collider.name.Equals("Star"))
+            {
+
+                if (_takeStar!=null)
+                {
+                    StopCoroutine(_takeStar);
+                }
+
+                _takeStar = ItemController.Instance.TakeStar();
+                StartCoroutine(_takeStar);
+            }
             Destroy(hit.gameObject);
         }
         // Debug.Log(hit.gameObject.name);
     }
 
-    /*
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.transform.tag == "Obstacle")
-        {
-            _direction.z = 0;
-            LevelManager.Instance.ShowGameOver();
-           
-        }
-        Debug.Log(hit.transform.name);
-    }
-    */
 
 
     public Vector3 GetPlayerPosition()
@@ -254,7 +272,11 @@ public class PlayerController : MonoBehaviour
 
         _playerAnimator = GetComponent<Animator>();
 
+        _scoreOfPlayer = 0;
+        _coinsNumberOfPlayer = 0;
+
     }
+
 
     private void Move()
     {
@@ -355,6 +377,8 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+
     private void SpeedUpCharacter()
     {
         if (_forwardSpeed < _playerMaxSpeed)
@@ -362,5 +386,19 @@ public class PlayerController : MonoBehaviour
             _forwardSpeed += 0.1f * Time.deltaTime;
         }
         
+    }
+
+
+    public int GetNumberOfCoin()
+    {
+        return _coinsNumberOfPlayer;
+
+    }
+
+
+    public int GetScoreOfPlayer()
+    {
+        return _scoreOfPlayer;
+
     }
 }

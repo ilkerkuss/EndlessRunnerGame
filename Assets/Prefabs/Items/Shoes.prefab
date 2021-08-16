@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 673489288886606913}
   - component: {fileID: 673489288890903585}
   m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_025:pCube9
+  m_Name: Shoe
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

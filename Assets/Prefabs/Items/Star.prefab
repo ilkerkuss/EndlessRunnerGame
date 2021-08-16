@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 1508181178716271163}
   - component: {fileID: 1508181178712228443}
   m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_057:pCylinder1
+  m_Name: Star
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

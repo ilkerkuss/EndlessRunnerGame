@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3096414172333626998}
   m_Layer: 0
   m_Name: Quadruple_Coin
-  m_TagString: Coin
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

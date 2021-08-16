@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _player;
     [SerializeField] private Text _startingText;
+    [SerializeField] private Text _coinsText;
+    [SerializeField] private Text _scoreText;
 
 
     // Start is called before the first frame update
@@ -39,6 +41,8 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         StartGame();
+        ShowTakenCoinNumber();
+        ShowScoreOfPlayer();
   
     }
 
@@ -73,7 +77,6 @@ public class LevelManager : MonoBehaviour
         {
             StartCoroutine(CountForStart());
 
-
         }
 
     }
@@ -93,6 +96,18 @@ public class LevelManager : MonoBehaviour
 
         IsGameStarted = true;
 
+    }
+
+    public void ShowTakenCoinNumber()
+    {
+        Debug.Log(PlayerController.Instance.GetNumberOfCoin());
+        _coinsText.text = "Coins :"+PlayerController.Instance.GetNumberOfCoin().ToString();
+    }
+
+    public void ShowScoreOfPlayer()
+    {
+        Debug.Log(PlayerController.Instance.GetScoreOfPlayer());
+        _scoreText.text = "Score :"+PlayerController.Instance.GetScoreOfPlayer().ToString();
     }
 
 }
