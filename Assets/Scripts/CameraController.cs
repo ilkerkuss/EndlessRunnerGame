@@ -13,10 +13,12 @@ public class CameraController : MonoBehaviour
         _offset = transform.position - _target.position;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, _target.transform.position.z+_offset.z);
-        transform.position = newPosition;
+        transform.position = Vector3.Lerp(transform.position,newPosition,0.5f);
+
+        //transform.position = newPosition;
         //Debug.Log(_offset);
 
 

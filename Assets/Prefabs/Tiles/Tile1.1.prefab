@@ -7963,8 +7963,8 @@ GameObject:
   - component: {fileID: 3427656083677385316}
   - component: {fileID: 3427656083677385319}
   m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_057:pCylinder1
-  m_TagString: Untagged
+  m_Name: Star
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16186,7 +16186,7 @@ GameObject:
   - component: {fileID: 3427656084484427538}
   - component: {fileID: 3427656084484427541}
   m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_025:pCube9
+  m_Name: Shoe
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

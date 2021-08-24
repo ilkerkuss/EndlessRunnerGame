@@ -55,16 +55,19 @@ public class PlayerController : MonoBehaviour
         
         Debug.Log("Yerde mi:" + _isGrounded);
 
+     
+        //Debug.Log("öldü mü"+_isDead);
+
+    }
+
+    private void LateUpdate()
+    {
         if (!_isDead && LevelManager.IsGameStarted) // oyun baþlatýldý ve karakter ölü deðil ise
         {
             Move();
             SpeedUpCharacter();
-            
 
         }
-        //Debug.Log("öldü mü"+_isDead);
-
-
     }
 
 
@@ -357,7 +360,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-           // Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
+            //Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
 
             /*
             if (_movementLane == 0)
@@ -372,7 +375,7 @@ public class PlayerController : MonoBehaviour
             }
             */
 
-            //transform.position = targetPosition;
+            //transform.position = Vector3.Lerp(transform.position,targetPosition,80* Time.deltaTime);
 
 
         }

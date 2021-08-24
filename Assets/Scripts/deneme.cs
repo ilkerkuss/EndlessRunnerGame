@@ -11,9 +11,12 @@ public class deneme : MonoBehaviour
     private Vector2 secondPressPos;
     private Vector2 currentSwipe;
 
+    private bool MoveLeft;
+
     void Start()
     {
-        dir = Vector3.forward;
+        MoveLeft = false;
+        dir = Vector3.right;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -25,10 +28,27 @@ public class deneme : MonoBehaviour
             rb.velocity = Vector3.up * 5;
         }
         //Swipe();
-        Move();
-
+        //Move();
+        MoveSnowman();
     }
 
+    private void MoveSnowman()
+    {
+        transform.Translate(dir*4*Time.deltaTime);
+
+
+        if (transform.position.x <=-4 )
+        {
+
+            dir = Vector3.right;
+
+        }
+       else if (transform.position.x >= 4 )
+        {
+
+            dir = Vector3.left;
+        }
+    }
 
     public void Swipe()
     {
@@ -62,11 +82,13 @@ public class deneme : MonoBehaviour
             if (currentSwipe.x < 0 && currentSwipe.y >-0.5f && currentSwipe.y < 0.5f)
         {
                 Debug.Log("left swipe");
+                transform.position += Vector3.Lerp(transform.position,Vector3.back * 2f,0.2f);
             }
             //swipe right
             if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
         {
                 Debug.Log("right swipe");
+                transform.position += Vector3.Lerp(transform.position, Vector3.forward * 2f, 0.9f);
             }
         }
     }
@@ -76,7 +98,7 @@ public class deneme : MonoBehaviour
 
         //var moveDir = Vector3.forward * 2;
         //rb.velocity = Vector3.forward * 0;
-        transform.position += Vector3.forward * 5f*Time.deltaTime;
+        transform.position += Vector3.forward * 0f*Time.deltaTime;
 
 
         if (Input.GetMouseButtonDown(0))
@@ -136,4 +158,5 @@ public class deneme : MonoBehaviour
 
         }
     }
+
 }
