@@ -9,7 +9,7 @@ public class TileManager : MonoBehaviour
     [SerializeField]private GameObject[] _tileList;
     private float _nextSpawn = 0f;
     private float _tileLength=99f;
-    private int NumberOfTiles = 5;
+    private int _numberOfTiles = 5;
 
     private Transform _playerTransform;
     private List<GameObject> _activeTiles;
@@ -35,9 +35,9 @@ public class TileManager : MonoBehaviour
     void Update()
     {
  
-            if (_playerTransform.position.z - 120 >= _nextSpawn - (_tileLength * NumberOfTiles))
+            if (_playerTransform.position.z - 120 >= _nextSpawn - (_tileLength * _numberOfTiles))
             {
-                SpawnTile(Random.Range(0, NumberOfTiles));
+                SpawnTile(Random.Range(0, _numberOfTiles));
                 DeleteTile(); // yeni tile oluþtuðunda ilk oluþturulan tile silinir
             }
 
@@ -67,12 +67,12 @@ public class TileManager : MonoBehaviour
 
     private void Init()
     {
-        Debug.Log("TileManager INIT");
+        //Debug.Log("TileManager INIT");
         //_activeTiles = new List<GameObject>();
         _nextSpawn = 0;
 
         // Generate beginning parkour
-        for (int i = 0; i < NumberOfTiles; i++)
+        for (int i = 0; i < _numberOfTiles; i++)
         {
             if (i == 0)
             {
@@ -80,7 +80,7 @@ public class TileManager : MonoBehaviour
             }
             else
             {
-                SpawnTile(Random.Range(0, NumberOfTiles));
+                SpawnTile(Random.Range(0, _numberOfTiles));
             }
 
         }

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private float _playerMaxSpeed = 20f;
 
     private float _laneDistance = 4f;
-    private int _movementLane = 1; //0:left 1:middle 2:right
+    private int _movementLane ; //0:left 1:middle 2:right
 
     [SerializeField] private float _jumpForce = 5f;
     private float _gravityForce = -9.81f;
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         {
             Move();
             SpeedUpCharacter();
+            IncreaseScore();
 
         }
     }
@@ -79,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
         _playerAnimator.SetTrigger("IsJumped");
 
+        AudioController.Instance.PlaySound("JumpSound");
+
     }
 
 
@@ -91,6 +94,8 @@ public class PlayerController : MonoBehaviour
         _playerAnimator.SetBool("IsSlide", true);
         _chrCollider.center = new Vector3(0, -0.01f, 0);
         _chrCollider.height = 0;
+
+        AudioController.Instance.PlaySound("SlideSound");
 
         
 
@@ -112,6 +117,8 @@ public class PlayerController : MonoBehaviour
             _isDead = true;
             _playerAnimator.SetBool("IsRunning",false);
 
+            AudioController.Instance.PlaySound("GameOver");
+
             LevelManager.Instance.ShowGameOver();
         }
 
@@ -123,12 +130,14 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("alýnan altýn"+GetNumberOfCoin());
             //Debug.Log("alýnan skor"+GetScoreOfPlayer());
             Destroy(hit.gameObject);
+
+            AudioController.Instance.PlaySound("PickUpCoin");
         }
 
 
         if (hit.collider.CompareTag("Item"))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             if (hit.collider.name.Equals("Shoe"))
             {
                 ItemController.Instance.TakeShoe();
@@ -162,6 +171,8 @@ public class PlayerController : MonoBehaviour
     {
 
         transform.position = _playerPos;
+        LevelManager.IsGameOver = true;
+        LevelManager.IsGameStarted = false;
         Init();
 
         // _direction.z = _forwardSpeed;
@@ -169,104 +180,12 @@ public class PlayerController : MonoBehaviour
 
 
     
-    private void MoveCharacter()
-    {
-        // _chrController.Move(_direction * Time.deltaTime);
-
-        //var movement = _direction * _forwardSpeed;
-        //_rb.velocity = movement;
-
-        /*
-        if (Input.GetMouseButton(0))
-        {
-            firstMousePos = Input.mousePosition;
-            //Debug.Log("mouse ilk konum" + firstMousePos);
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            lastMousePos = Input.mousePosition;
-        }
-        */
-
-
-        if (_isGrounded)
-        {
-            // Debug.Log("mouse son konum" + lastMousePos);
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-
-
-            }
-
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                //StartCoroutine(Slide());
-
-
-            }
-        }
-        else
-        {
-            //_direction.y += _gravityForce * Time.deltaTime;
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.A)) // firstMousePos.x- lastMousePos.x > 3
-        {
-            Debug.Log("Sola Kay");
-            _movementLane -= 1;
-            transform.position += Vector3.left * _laneDistance;
-
-            if (_movementLane < 0)
-            {
-                _movementLane = 0;
-
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.D)) // firstMousePos.x - lastMousePos.x < 3
-        {
-            Debug.Log("Saða Kay");
-            _movementLane += 1;
-            transform.position += Vector3.right * _laneDistance;
-
-            if (_movementLane > 2)
-            {
-                _movementLane = 2;
-            }
-        }
-        /*
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            Debug.Log("s bas");
-            StartCoroutine(Slide());
-        }
-        */
-
-        Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-
-
-        if (_movementLane == 0)
-        {
-            targetPosition += Vector3.left * _laneDistance;
-        }
-        else if (_movementLane == 2)
-        {
-            targetPosition += Vector3.right * _laneDistance;
-        }
-
-        transform.position = targetPosition;
-
-        //Debug.Log(transform.position);
-    }
-
 
     public void Init()
     {
-        Debug.Log("PlayerController INIT");
+        //Debug.Log("PlayerController INIT");
         _forwardSpeed = 5f;
+        _movementLane = 1;
         _rb = GetComponent<Rigidbody>();
         _isDead = false;
         _playerPos = transform.position;
@@ -285,7 +204,6 @@ public class PlayerController : MonoBehaviour
     {
 
         var moveDir = Vector3.forward * _forwardSpeed * Time.deltaTime;
-        //_rb.velocity = moveDir;
         transform.position += moveDir;
 
         _playerAnimator.SetBool("IsRunning", true);
@@ -331,13 +249,16 @@ public class PlayerController : MonoBehaviour
             if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
             {
                 Debug.Log("Sola kay");
-
+               
+             
                 if (_movementLane > 0)
                 {
-                    transform.position += Vector3.left * _laneDistance;
                     _movementLane--;
+                    transform.position += Vector3.left * _laneDistance;
+
+                    AudioController.Instance.PlaySound("LaneChangeSound");
                 }
-                else if (_movementLane < 0)
+                if (_movementLane <= 0)
                 {
                     _movementLane = 0;
                 }
@@ -346,13 +267,16 @@ public class PlayerController : MonoBehaviour
             if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
             {
                 Debug.Log("Saða kay");
-
+               
                 if (_movementLane < 2)
                 {
-                    transform.position += Vector3.right * _laneDistance;
                     _movementLane++;
+                    transform.position += Vector3.right * _laneDistance;
+                    
+
+                    AudioController.Instance.PlaySound("LaneChangeSound");
                 }
-                else if (_movementLane > 2)
+                else if (_movementLane >= 2)
                 {
                     _movementLane = 2;
                 }
@@ -404,4 +328,16 @@ public class PlayerController : MonoBehaviour
         return _scoreOfPlayer;
 
     }
+
+    private void IncreaseScore() //hýz deðerine göre puan arttýrma
+    {
+        float increaseAmount = 0;
+        increaseAmount = transform.position.z + 2.2f;
+        Debug.Log("increase amount : "+increaseAmount);
+    
+        _scoreOfPlayer += (int)Mathf.Round(increaseAmount); 
+               
+    }
+
+    
 }

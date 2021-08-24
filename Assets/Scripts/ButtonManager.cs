@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    
+    
 
-
-    public void  ReplayGame() //onclick
+    public void ReplayGame() //onclick
     {
         LevelManager.Instance.Replay();
+        LevelManager.Instance.StartGame();
+
+        
+        AudioController.Instance.PlaySound("ButtonSound");
 
 
     }
@@ -17,7 +22,25 @@ public class ButtonManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+
+        AudioController.Instance.PlaySound("ButtonSound");
     }
 
+
+    public void OnClickPlayGame()
+    {
+        LevelManager.Instance.PlayGame();
+     
+
+        AudioController.Instance.PlaySound("ButtonSound");
+    }
+
+    public void OnClickBackToMenu()
+    {
+        LevelManager.Instance.BackToMenu();
+
+        AudioController.Instance.PlaySound("ButtonSound");
+
+    }
 
 }

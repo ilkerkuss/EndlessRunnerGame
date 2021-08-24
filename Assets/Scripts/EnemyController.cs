@@ -9,19 +9,28 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         dir = Vector3.right;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.gameObject.name == "Snowman")
+        {
+            
+            MoveSnowman();
+        }
+        else if (transform.gameObject.name== "Penguin")
+        {
+            MovePenguin();
+        }
     }
 
     private void MoveSnowman()
     {
         transform.Translate(dir * 4 * Time.deltaTime);
 
-
+        
         if (transform.position.x <= -4)
         {
 
