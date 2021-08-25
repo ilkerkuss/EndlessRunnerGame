@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    
+
     
 
     public void ReplayGame() //onclick
@@ -43,4 +43,15 @@ public class ButtonManager : MonoBehaviour
 
     }
 
+    public void OnClickPauseResumeGame()
+    {
+        if (!LevelManager.IsGamePaused)
+        {
+            LevelManager.Instance.PauseGame();
+        }
+        else{
+            LevelManager.Instance.ResumeGame();
+        }
+        
+    }
 }

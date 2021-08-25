@@ -9,8 +9,10 @@ public class LevelManager : MonoBehaviour
 
     public static bool IsGameOver;
     public static bool IsGameStarted;
+    public static bool IsGamePaused;
 
     [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameObject _PausePanel;
     [SerializeField] private GameObject _player;
     [SerializeField] private Text _startingText;
     [SerializeField] private Text _coinsText;
@@ -23,36 +25,61 @@ public class LevelManager : MonoBehaviour
     private int _startCounter;
 
 
-    // Start is called before the first frame update
-
     private void Awake()
     {
         if (Instance==null)
         {
             Instance=this;
         }
+
+        
     }
+
+
 
     void Start()
     {
         _mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
+        Init();
 
-        IsGameOver = false;
-        IsGameStarted = false;
-
-        _startCounter = 3;
-      //  Time.timeScale = 1;
     }
+
 
 
     void Update()
     {
-      
-        StartGame();
-        ShowTakenCoinNumber();
-        ShowScoreOfPlayer();
-  
+        if (!IsGameOver && !IsGamePaused)
+        {
+            StartGame();
+            ShowTakenCoinNumber();
+            ShowScoreOfPlayer();
+
+        }
+        Debug.Log("over,pause,start" + LevelManager.IsGameOver + LevelManager.IsGamePaused + LevelManager.IsGameStarted);
+
     }
+
+
+
+
+    public void Init()
+    {
+
+        IsGameOver = false;
+        IsGameStarted = false;
+        IsGamePaused = false;
+
+        _startingText.gameObject.SetActive(true);
+        _coinsText.gameObject.SetActive(true);
+        _scoreText.gameObject.SetActive(true);
+
+        _startCounter = 3;
+        //  Time.timeScale = 1;
+    }
+
+
+
+
 
     public void Replay()
     {
@@ -65,10 +92,10 @@ public class LevelManager : MonoBehaviour
 
         AudioController.Instance._sounds[0].AudioSource.Play(); //background sound çalma.
 
-        
 
         ActivateInGameUI();
-        
+
+        Init(); 
 
     }
 
@@ -127,6 +154,8 @@ public class LevelManager : MonoBehaviour
 
     }
 
+
+
     public void ShowTakenCoinNumber()
     {
         //Debug.Log(PlayerController.Instance.GetNumberOfCoin());
@@ -151,15 +180,48 @@ public class LevelManager : MonoBehaviour
 
     public void BackToMenu()
     {
+
         _mainMenu.SetActive(true);
         _gameOverPanel.SetActive(false);
+
+        
     }
+
+    public void PauseGame()
+    {
+        if (!IsGameOver && !IsGamePaused)
+        {
+            _PausePanel.SetActive(true);
+
+            Time.timeScale = 0;
+            IsGamePaused = true;
+
+            
+
+        }
+    }
+
+    public void ResumeGame()
+    {
+        if (!IsGameOver && IsGamePaused)
+        {
+            _PausePanel.SetActive(false);
+
+            Time.timeScale = 1;
+            IsGamePaused = false;
+
+            
+        }
+    }
+
 
     private void SetEndGameScores()
     {
         _totalCoinsText.text = "Total Coins " + PlayerController.Instance.GetNumberOfCoin().ToString();
         _totalScoreText.text = "Total Score " + PlayerController.Instance.GetScoreOfPlayer().ToString();
     }
+
+
 
     private void DisableInGameUI()
     {

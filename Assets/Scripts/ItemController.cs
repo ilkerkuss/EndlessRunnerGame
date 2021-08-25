@@ -36,16 +36,35 @@ public class ItemController : MonoBehaviour
 
 
 
-    public void TakeShoe() //ayakkabý alýnýrsa speed ve jumpheight artacak 5 sn
+    public IEnumerator TakeShoe() //ayakkabý alýnýrsa speed ve jumpheight iki katýna çýkar 10 sn
     {
         Debug.Log("Ayakkabý alýndý.");
+        //speed ve jump force *2 ayarlama
+        float tempSpeed = PlayerController.Instance.GetPlayerSpeed();
+        PlayerController.Instance.SetPlayerSpeed(tempSpeed * 2);
+
+        float tempJumpForce = PlayerController.Instance.GetPlayerJumpForce();
+        PlayerController.Instance.SetPlayerJumpForce(tempJumpForce*2);
+
+        yield return new WaitForSeconds(10f);
+
+        //speed ve jumpforce eski deðerine döndürme
+        PlayerController.Instance.SetPlayerSpeed(tempSpeed);
+        PlayerController.Instance.SetPlayerSpeed(tempJumpForce);
     }
 
     public IEnumerator TakeStar() //if yýldýz true 5 sn score *5 eklenecek
     {
-        
-        yield return new WaitForSeconds(1.5f);
         Debug.Log("Yýldýz alýndý.");
+
+        int tempCoinValue = PlayerController.Instance.GetCoinValue();
+        PlayerController.Instance.SetCoinValue(tempCoinValue * 5); // coin value *5 ayarlama
+        yield return new WaitForSeconds(5f);
+
+        PlayerController.Instance.SetCoinValue(tempCoinValue); //eski deðerine döndürme
+
+        Debug.Log("yýldýz bitti");
+        
     }
 
 

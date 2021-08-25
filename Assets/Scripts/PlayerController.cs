@@ -33,15 +33,26 @@ public class PlayerController : MonoBehaviour
 
     // ItemController methodunu obje içine almak için
     private IEnumerator _takeStar;
+    private IEnumerator _takeShoe;
 
     //player altýn sayýsý ve skoru
     private int _scoreOfPlayer;
     private int _coinsNumberOfPlayer;
 
+    private float _increaseAmount; //score için artýþ deðeri
+    private int _coinValue;  //coinlerin deðeri
+
+
     private void Awake()
     {
-        Instance = this;
+        if (Instance==null)
+        {
+            Instance = this;
+        }
+       
     }
+
+
     private void Start()
     {
         Init();
@@ -53,20 +64,20 @@ public class PlayerController : MonoBehaviour
         //IsGrounded
         _isGrounded = Physics.CheckSphere(transform.position, 1f, _groundLayer);
         
-        Debug.Log("Yerde mi:" + _isGrounded);
+        //Debug.Log("Yerde mi:" + _isGrounded);
 
      
-        //Debug.Log("öldü mü"+_isDead);
 
     }
 
     private void LateUpdate()
     {
-        if (!_isDead && LevelManager.IsGameStarted) // oyun baþlatýldý ve karakter ölü deðil ise
+        if (!_isDead && LevelManager.IsGameStarted && !LevelManager.IsGamePaused) // oyun baþlatýldý ve karakter ölü deðil ise  ** ve oyun durdurulmamýþ ise
         {
             Move();
             SpeedUpCharacter();
             IncreaseScore();
+            
 
         }
     }
@@ -126,7 +137,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider.CompareTag("Coin"))
         {
             _coinsNumberOfPlayer += 1;
-            _scoreOfPlayer += 50;
+            //_scoreOfPlayer += 50;
             //Debug.Log("alýnan altýn"+GetNumberOfCoin());
             //Debug.Log("alýnan skor"+GetScoreOfPlayer());
             Destroy(hit.gameObject);
@@ -140,7 +151,13 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(hit.collider.name);
             if (hit.collider.name.Equals("Shoe"))
             {
-                ItemController.Instance.TakeShoe();
+                if (_takeStar != null)
+                {
+                    StopCoroutine(_takeShoe);
+                }
+
+                _takeShoe = ItemController.Instance.TakeShoe();
+                StartCoroutine(_takeShoe);
 
             }
             if (hit.collider.name.Equals("Star"))
@@ -196,6 +213,9 @@ public class PlayerController : MonoBehaviour
 
         _scoreOfPlayer = 0;
         _coinsNumberOfPlayer = 0;
+
+        _increaseAmount = 0;
+        _coinValue = 50;
 
     }
 
@@ -329,15 +349,53 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void IncreaseScore() //hýz deðerine göre puan arttýrma
+
+
+    public void IncreaseScore() //ilerleme(distance) deðerine ve alýnan coine göre puan arttýrma
     {
-        float increaseAmount = 0;
-        increaseAmount = transform.position.z + 2.2f;
-        Debug.Log("increase amount : "+increaseAmount);
-    
-        _scoreOfPlayer += (int)Mathf.Round(increaseAmount); 
-               
+        _increaseAmount =  transform.position.z;
+        Debug.Log("increase amount : "+Mathf.Round(_increaseAmount));
+
+        _scoreOfPlayer =  (int)Mathf.Round(_increaseAmount);
+        _scoreOfPlayer += (_coinsNumberOfPlayer * _coinValue);
+
+
     }
+
+
+
+    //Item alýndýðýnda kullanýlan player func.
+    //Shoe item func.
+    public float GetPlayerSpeed()
+    {
+        return _forwardSpeed;
+    }
+
+    public void SetPlayerSpeed(float Speed)
+    {
+         _forwardSpeed=Speed;
+    }
+
+    public float GetPlayerJumpForce()
+    {
+        return _jumpForce;
+    }
+
+    public void SetPlayerJumpForce(float ForceAmount)
+    {
+         _jumpForce=ForceAmount;
+    }
+
+    //Star item func.
+    public int GetCoinValue()
+    {
+        return _coinValue;
+    }
+    public void SetCoinValue(int Value)
+    {
+        _coinValue= Value;
+    }
+
 
     
 }
