@@ -2137,7 +2137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8402765758091434342}
   m_Layer: 0
-  m_Name: LineBlock (2)
+  m_Name: LineBlock
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8714,7 +8714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8402765756828355714}
   m_Layer: 0
-  m_Name: LineBlock (1)
+  m_Name: LineBlock
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14938,7 +14938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8402765757903304544}
   m_Layer: 0
-  m_Name: LineBlock (3)
+  m_Name: LineBlock
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19885,7 +19885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8402765757154543188}
   m_Layer: 0
-  m_Name: LineBlock (4)
+  m_Name: LineBlock
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

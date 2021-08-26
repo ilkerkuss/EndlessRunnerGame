@@ -44,24 +44,24 @@ public class ItemController : MonoBehaviour
         PlayerController.Instance.SetPlayerSpeed(tempSpeed * 2);
 
         float tempJumpForce = PlayerController.Instance.GetPlayerJumpForce();
-        PlayerController.Instance.SetPlayerJumpForce(tempJumpForce*2);
+        PlayerController.Instance.SetPlayerJumpForce(tempJumpForce + 2);
 
         yield return new WaitForSeconds(10f);
 
         //speed ve jumpforce eski deðerine döndürme
         PlayerController.Instance.SetPlayerSpeed(tempSpeed);
-        PlayerController.Instance.SetPlayerSpeed(tempJumpForce);
+        PlayerController.Instance.SetPlayerJumpForce(tempJumpForce);
     }
 
     public IEnumerator TakeStar() //if yýldýz true 5 sn score *5 eklenecek
     {
         Debug.Log("Yýldýz alýndý.");
 
-        int tempCoinValue = PlayerController.Instance.GetCoinValue();
-        PlayerController.Instance.SetCoinValue(tempCoinValue * 5); // coin value *5 ayarlama
+        int tempCoinValue = PlayerManager.Instance.GetCoinValue();
+        PlayerManager.Instance.SetCoinValue(tempCoinValue * 5); // coin value *5 ayarlama
         yield return new WaitForSeconds(5f);
 
-        PlayerController.Instance.SetCoinValue(tempCoinValue); //eski deðerine döndürme
+        PlayerManager.Instance.SetCoinValue(tempCoinValue); //eski deðerine döndürme
 
         Debug.Log("yýldýz bitti");
         

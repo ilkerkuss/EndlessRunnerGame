@@ -35,13 +35,16 @@ public class PlayerController : MonoBehaviour
     private IEnumerator _takeStar;
     private IEnumerator _takeShoe;
 
+    //playermanagera taþýnanlar
+    /*
     //player altýn sayýsý ve skoru
     private int _scoreOfPlayer;
     private int _coinsNumberOfPlayer;
+    
 
     private float _increaseAmount; //score için artýþ deðeri
     private int _coinValue;  //coinlerin deðeri
-
+    */
 
     private void Awake()
     {
@@ -76,7 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             Move();
             SpeedUpCharacter();
-            IncreaseScore();
+            //IncreaseScore();
             
 
         }
@@ -126,6 +129,8 @@ public class PlayerController : MonoBehaviour
             //_direction.z = 0;
             _rb.velocity = Vector3.zero;
             _isDead = true;
+            LevelManager.IsGameOver = true;
+
             _playerAnimator.SetBool("IsRunning",false);
 
             AudioController.Instance.PlaySound("GameOver");
@@ -136,10 +141,9 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider.CompareTag("Coin"))
         {
-            _coinsNumberOfPlayer += 1;
+            //_coinsNumberOfPlayer += 1;
+            PlayerManager.Instance.IncreaseNumberOfCoin();
             //_scoreOfPlayer += 50;
-            //Debug.Log("alýnan altýn"+GetNumberOfCoin());
-            //Debug.Log("alýnan skor"+GetScoreOfPlayer());
             Destroy(hit.gameObject);
 
             AudioController.Instance.PlaySound("PickUpCoin");
@@ -190,6 +194,7 @@ public class PlayerController : MonoBehaviour
         transform.position = _playerPos;
         LevelManager.IsGameOver = true;
         LevelManager.IsGameStarted = false;
+
         Init();
 
         // _direction.z = _forwardSpeed;
@@ -211,12 +216,14 @@ public class PlayerController : MonoBehaviour
 
         _playerAnimator = GetComponent<Animator>();
 
+        /*
         _scoreOfPlayer = 0;
         _coinsNumberOfPlayer = 0;
+        
 
         _increaseAmount = 0;
         _coinValue = 50;
-
+        */
     }
 
 
@@ -335,13 +342,15 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
+    // playermanager taþýnanlar
+/*
+ 
+//player score and coin stats
     public int GetNumberOfCoin()
     {
         return _coinsNumberOfPlayer;
 
     }
-
 
     public int GetScoreOfPlayer()
     {
@@ -354,13 +363,16 @@ public class PlayerController : MonoBehaviour
     public void IncreaseScore() //ilerleme(distance) deðerine ve alýnan coine göre puan arttýrma
     {
         _increaseAmount =  transform.position.z;
-        Debug.Log("increase amount : "+Mathf.Round(_increaseAmount));
+        //Debug.Log("increase amount : "+Mathf.Round(_increaseAmount));
 
         _scoreOfPlayer =  (int)Mathf.Round(_increaseAmount);
         _scoreOfPlayer += (_coinsNumberOfPlayer * _coinValue);
 
 
     }
+
+*/
+
 
 
 
@@ -386,6 +398,10 @@ public class PlayerController : MonoBehaviour
          _jumpForce=ForceAmount;
     }
 
+
+
+//Playermanagera taþýnanlar
+    /*
     //Star item func.
     public int GetCoinValue()
     {
@@ -395,7 +411,7 @@ public class PlayerController : MonoBehaviour
     {
         _coinValue= Value;
     }
-
+    */
 
     
 }

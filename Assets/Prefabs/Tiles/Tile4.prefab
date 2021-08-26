@@ -446,7 +446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (3)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -958,7 +958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (4)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -984,7 +984,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (1)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -1596,7 +1596,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1100538972581139674, guid: c1a10efd2aa1faf44b2e33c684c59773, type: 3}
       propertyPath: m_Name
-      value: LineBlock (2)
+      value: LineBlock
       objectReference: {fileID: 0}
     - target: {fileID: 1100538972581139674, guid: c1a10efd2aa1faf44b2e33c684c59773, type: 3}
       propertyPath: m_Layer
@@ -1970,7 +1970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (1)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -2370,7 +2370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (7)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -2440,7 +2440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (9)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -2466,7 +2466,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1100538972581139674, guid: c1a10efd2aa1faf44b2e33c684c59773, type: 3}
       propertyPath: m_Name
-      value: LineBlock (1)
+      value: LineBlock
       objectReference: {fileID: 0}
     - target: {fileID: 1100538972581139674, guid: c1a10efd2aa1faf44b2e33c684c59773, type: 3}
       propertyPath: m_Layer
@@ -2840,7 +2840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (5)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -2866,7 +2866,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (2)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -3172,7 +3172,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (5)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -3522,7 +3522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (6)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -4106,7 +4106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (2)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -4132,7 +4132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (6)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -4800,7 +4800,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (4)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -5220,7 +5220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (8)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer
@@ -5368,7 +5368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Name
-      value: Box (3)
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 1737766054628107169, guid: 0f3bbe5594208df4fbfc0bba40ba419e, type: 3}
       propertyPath: m_Layer

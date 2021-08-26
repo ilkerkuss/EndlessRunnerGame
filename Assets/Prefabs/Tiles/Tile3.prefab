@@ -1038,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8974695260791190370, guid: 105a0bab68b6b614589f8c127749823d, type: 3}
       propertyPath: m_Name
-      value: Deer (1)
+      value: Deer
       objectReference: {fileID: 0}
     - target: {fileID: 8974695260791190370, guid: 105a0bab68b6b614589f8c127749823d, type: 3}
       propertyPath: m_Layer
@@ -1478,7 +1478,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (3)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -2016,7 +2016,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (4)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -2366,7 +2366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988622812163911447, guid: f64feccb3491d324881d51ef484e7cf6, type: 3}
       propertyPath: m_Name
-      value: Snowman (1)
+      value: Snowman
       objectReference: {fileID: 0}
     - target: {fileID: 988622812163911447, guid: f64feccb3491d324881d51ef484e7cf6, type: 3}
       propertyPath: m_Layer
@@ -2602,7 +2602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988622812163911447, guid: f64feccb3491d324881d51ef484e7cf6, type: 3}
       propertyPath: m_Name
-      value: Snowman (2)
+      value: Snowman
       objectReference: {fileID: 0}
     - target: {fileID: 988622812163911447, guid: f64feccb3491d324881d51ef484e7cf6, type: 3}
       propertyPath: m_Layer
@@ -2700,7 +2700,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (5)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -3062,7 +3062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987160227675818695, guid: 986d0d2bf102ead429d582be4f1de16a, type: 3}
       propertyPath: m_Name
-      value: Gift_Box (2)
+      value: Gift_Box
       objectReference: {fileID: 0}
     - target: {fileID: 1987160227675818695, guid: 986d0d2bf102ead429d582be4f1de16a, type: 3}
       propertyPath: m_Layer
@@ -3100,7 +3100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (1)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -3406,7 +3406,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Name
-      value: Quadruple_Coin (2)
+      value: Quadruple_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2455256478158737347, guid: 485028f38dcba4f4c9f424afb258a886, type: 3}
       propertyPath: m_Layer
@@ -4282,7 +4282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1987160227675818695, guid: 986d0d2bf102ead429d582be4f1de16a, type: 3}
       propertyPath: m_Name
-      value: Gift_Box (1)
+      value: Gift_Box
       objectReference: {fileID: 0}
     - target: {fileID: 1987160227675818695, guid: 986d0d2bf102ead429d582be4f1de16a, type: 3}
       propertyPath: m_Layer

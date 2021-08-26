@@ -23,6 +23,8 @@ public class ButtonManager : MonoBehaviour
     {
         Application.Quit();
 
+        //PlayerManager.Instance.ResetGold();
+
         AudioController.Instance.PlaySound("ButtonSound");
     }
 

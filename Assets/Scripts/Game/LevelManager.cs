@@ -17,8 +17,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Text _startingText;
     [SerializeField] private Text _coinsText;
     [SerializeField] private Text _scoreText;
-    [SerializeField] private Text _totalCoinsText;
-    [SerializeField] private Text _totalScoreText;
+    [SerializeField] private Text _endGameCoinsText;
+    [SerializeField] private Text _endGameScoreText;
   
     private GameObject _mainMenu;
 
@@ -92,6 +92,8 @@ public class LevelManager : MonoBehaviour
 
         AudioController.Instance._sounds[0].AudioSource.Play(); //background sound çalma.
 
+        PlayerManager.Instance.ResetScores();
+        PlayerManager.Instance.ActivateHighScoreUI();
 
         ActivateInGameUI();
 
@@ -119,6 +121,8 @@ public class LevelManager : MonoBehaviour
 
 
         SetEndGameScores();
+
+        PlayerManager.Instance.DisableHighScoreUI();
 
         DisableInGameUI();
 
@@ -159,13 +163,13 @@ public class LevelManager : MonoBehaviour
     public void ShowTakenCoinNumber()
     {
         //Debug.Log(PlayerController.Instance.GetNumberOfCoin());
-        _coinsText.text = "Coins :"+PlayerController.Instance.GetNumberOfCoin().ToString();
+        _coinsText.text = "Coins :"+ PlayerManager.Instance.GetNumberOfCoin().ToString();
     }
 
     public void ShowScoreOfPlayer()
     {
        // Debug.Log(PlayerController.Instance.GetScoreOfPlayer());
-        _scoreText.text = "Score :"+PlayerController.Instance.GetScoreOfPlayer().ToString();
+        _scoreText.text = "Score :"+ PlayerManager.Instance.GetScoreOfPlayer().ToString();
     }
 
 
@@ -217,8 +221,8 @@ public class LevelManager : MonoBehaviour
 
     private void SetEndGameScores()
     {
-        _totalCoinsText.text = "Total Coins " + PlayerController.Instance.GetNumberOfCoin().ToString();
-        _totalScoreText.text = "Total Score " + PlayerController.Instance.GetScoreOfPlayer().ToString();
+        _endGameCoinsText.text = "Taken Coins " + PlayerManager.Instance.GetNumberOfCoin().ToString();
+        _endGameScoreText.text = "End Game Score " + PlayerManager.Instance.GetScoreOfPlayer().ToString();
     }
 
 
@@ -237,6 +241,8 @@ public class LevelManager : MonoBehaviour
         _coinsText.gameObject.SetActive(true);
         _scoreText.gameObject.SetActive(true);
     }
+
+
 
 
 
