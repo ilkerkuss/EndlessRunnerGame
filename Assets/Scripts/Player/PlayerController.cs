@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
     private IEnumerator _takeStar;
     private IEnumerator _takeShoe;
 
+    // swerve controls
+
+    private SwerveInputSystem _swerveInputSystem;
+    [SerializeField] private float swerveSpeed = 0.5f;
+    [SerializeField] private float maxSwerveAmount = 1f;
+
     //playermanagera taþýnanlar
     /*
     //player altýn sayýsý ve skoru
@@ -52,7 +58,9 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
-       
+
+        _swerveInputSystem = GetComponent<SwerveInputSystem>();
+
     }
 
 
@@ -66,23 +74,28 @@ public class PlayerController : MonoBehaviour
     {
         //IsGrounded
         _isGrounded = Physics.CheckSphere(transform.position, 1f, _groundLayer);
-        
+
         //Debug.Log("Yerde mi:" + _isGrounded);
 
-     
 
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (!_isDead && LevelManager.IsGameStarted && !LevelManager.IsGamePaused) // oyun baþlatýldý ve karakter ölü deðil ise  ** ve oyun durdurulmamýþ ise
         {
             Move();
             SpeedUpCharacter();
             //IncreaseScore();
-            
+
+            /*
+            float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
+            swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
+            transform.Translate(swerveAmount, 0, 0);
+            */
 
         }
+
     }
 
 
@@ -233,6 +246,8 @@ public class PlayerController : MonoBehaviour
         var moveDir = Vector3.forward * _forwardSpeed * Time.deltaTime;
         transform.position += moveDir;
 
+        
+
         _playerAnimator.SetBool("IsRunning", true);
 
 
@@ -281,7 +296,11 @@ public class PlayerController : MonoBehaviour
                 if (_movementLane > 0)
                 {
                     _movementLane--;
-                    transform.position += Vector3.left * _laneDistance;
+                    //transform.position += Vector3.left * _laneDistance;
+
+                   
+                    //transform.Translate(swerveAmount, 0, 0);
+
 
                     AudioController.Instance.PlaySound("LaneChangeSound");
                 }
@@ -298,8 +317,9 @@ public class PlayerController : MonoBehaviour
                 if (_movementLane < 2)
                 {
                     _movementLane++;
-                    transform.position += Vector3.right * _laneDistance;
-                    
+                    // transform.position += Vector3.right * _laneDistance;
+                    //transform.Translate(swerveAmount, 0, 0);
+
 
                     AudioController.Instance.PlaySound("LaneChangeSound");
                 }
