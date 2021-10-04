@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
 
-    
 
     public void ReplayGame() //onclick
     {
@@ -23,8 +23,6 @@ public class ButtonManager : MonoBehaviour
     {
         Application.Quit();
 
-        //PlayerManager.Instance.ResetGold();
-
         AudioController.Instance.PlaySound("ButtonSound");
     }
 
@@ -32,27 +30,29 @@ public class ButtonManager : MonoBehaviour
     public void OnClickPlayGame()
     {
         LevelManager.Instance.PlayGame();
-     
+
+        InGameCanvasController.Instance.PlayButton.gameObject.SetActive(false);
+
+        CanvasController.Instance.PausePanel.ShowPanel();
 
         AudioController.Instance.PlaySound("ButtonSound");
-    }
-
-    public void OnClickBackToMenu()
-    {
-        LevelManager.Instance.BackToMenu();
-
-        AudioController.Instance.PlaySound("ButtonSound");
-
     }
 
     public void OnClickPauseResumeGame()
     {
-        if (!LevelManager.IsGamePaused)
+        if (LevelManager.Instance.GameState == LevelManager.GameStates.IsGamePlaying)
         {
-            LevelManager.Instance.PauseGame();
+
+            PausePanelController.Instance.ShowPausePanel();
+
+            LevelManager.Instance.GameState = LevelManager.GameStates.IsGamePaused;
         }
         else{
-            LevelManager.Instance.ResumeGame();
+
+            PausePanelController.Instance.HidePausePanel();
+
+            LevelManager.Instance.GameState = LevelManager.GameStates.IsGamePlaying;
+
         }
         
     }

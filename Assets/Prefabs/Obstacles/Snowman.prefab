@@ -416,7 +416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988622812164338487}
-  - component: {fileID: 2395682654566839343}
+  - component: {fileID: 1869172010899692421}
   m_Layer: 0
   m_Name: Snowman
   m_TagString: Obstacle
@@ -447,7 +447,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &2395682654566839343
+--- !u!114 &1869172010899692421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,12 +456,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 988622812163911447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d77397b342b2ec242ae52ade5fe1043d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ecda4d9616c363489afae1d665c5375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &988622812163911449
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,12 +31,12 @@ Transform:
   - {fileID: 3427656083744551782}
   - {fileID: 3427656084065742710}
   - {fileID: 3427656082899827163}
-  - {fileID: 3427656084501006169}
   - {fileID: 3427656083559125879}
   - {fileID: 3427656082954827811}
   - {fileID: 3427656083925429828}
   - {fileID: 3427656084966004768}
   - {fileID: 3427656083776657406}
+  - {fileID: 6259277506417686861}
   m_Father: {fileID: 2474929838659882867}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 3427656082901591795}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_035:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,7 +1051,7 @@ Transform:
   - {fileID: 3427656084424030644}
   - {fileID: 3427656083823591536}
   m_Father: {fileID: 3184899114157000871}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656082956257477
 GameObject:
@@ -1450,36 +1450,6 @@ Transform:
   m_Father: {fileID: 3427656083320839404}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656082995669082
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656082995669083}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656082995669083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656082995669082}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084715677935}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656082995901275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,7 +1494,7 @@ GameObject:
   - component: {fileID: 3427656082996119937}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_035:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3050,7 +3020,7 @@ GameObject:
   - component: {fileID: 3427656083165758367}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_035:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3226,37 +3196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3427656084073638126}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083173404269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083173404266}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083173404266
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083173404269}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.025630377, y: 0.029806374, z: 0}
-  m_LocalScale: {x: 0.20985316, y: 0.20985316, z: 0.20985316}
-  m_Children:
-  - {fileID: 3427656083461354473}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083174911132
 GameObject:
@@ -5053,36 +4992,6 @@ Transform:
   m_Father: {fileID: 3427656082899827163}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083354537944
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083354537945}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform11
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083354537945
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083354537944}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656083801856696}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083362937226
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,37 +5021,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3427656084148736543}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083365527427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083365527424}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083365527424
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083365527427}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.039769348, y: 0.2009404, z: 0.012099912}
-  m_LocalScale: {x: 0.15181896, y: 0.15181896, z: 0.15181896}
-  m_Children:
-  - {fileID: 3427656084317599124}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083366441978
 GameObject:
@@ -5574,36 +5452,6 @@ Transform:
   m_Father: {fileID: 3427656083430922668}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083418713687
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083418713684}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083418713684
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083418713687}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084892430744}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083430922671
 GameObject:
   m_ObjectHideFlags: 0
@@ -6004,36 +5852,6 @@ Transform:
   - {fileID: 3427656083786892390}
   m_Father: {fileID: 3427656084145857640}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083461354472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083461354473}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform10
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083461354473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083461354472}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656083173404266}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083463911632
 GameObject:
@@ -6931,7 +6749,7 @@ Transform:
   - {fileID: 3427656084092336905}
   - {fileID: 3427656084044653097}
   m_Father: {fileID: 3184899114157000871}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083560152673
 GameObject:
@@ -6963,105 +6781,6 @@ Transform:
   m_Father: {fileID: 3427656084299128454}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083563742906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083563742907}
-  - component: {fileID: 3427656083563742886}
-  - component: {fileID: 3427656083563742905}
-  - component: {fileID: 3427656083563742904}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube2
-  m_TagString: Obstacle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083563742907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083563742906}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0023547015, y: 0.11973072, z: 0.0052412366}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084501006169}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3427656083563742886
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083563742906}
-  m_Mesh: {fileID: 4300000, guid: 93fa5b8b9b1a64bd79ad80a93207239a, type: 3}
---- !u!23 &3427656083563742905
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083563742906}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 93fa5b8b9b1a64bd79ad80a93207239a, type: 3}
-  - {fileID: 2100002, guid: 93fa5b8b9b1a64bd79ad80a93207239a, type: 3}
-  - {fileID: 2100004, guid: 93fa5b8b9b1a64bd79ad80a93207239a, type: 3}
-  - {fileID: 2100006, guid: 93fa5b8b9b1a64bd79ad80a93207239a, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3427656083563742904
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083563742906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 93fa5b8b9b1a64bd79ad80a93207239a, type: 3}
 --- !u!1 &3427656083572288187
 GameObject:
   m_ObjectHideFlags: 0
@@ -8899,7 +8618,7 @@ Transform:
   - {fileID: 3427656084483039364}
   - {fileID: 3427656083320839404}
   m_Father: {fileID: 3184899114157000871}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083776812808
 GameObject:
@@ -9301,37 +9020,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3427656084335695600}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083801856699
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083801856696}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube2 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083801856696
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083801856699}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024823122, y: 0.029806374, z: 0}
-  m_LocalScale: {x: 0.20985316, y: 0.20985316, z: 0.20985316}
-  m_Children:
-  - {fileID: 3427656083354537945}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083822592061
 GameObject:
@@ -10219,7 +9907,7 @@ Transform:
   - {fileID: 3427656084614426287}
   - {fileID: 3427656084999536337}
   m_Father: {fileID: 3184899114157000871}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083925935603
 GameObject:
@@ -10418,7 +10106,7 @@ GameObject:
   - component: {fileID: 3427656083943751731}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_074:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10971,37 +10659,6 @@ Transform:
   - {fileID: 3427656084240634590}
   m_Father: {fileID: 3427656084966004768}
   m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656083989227369
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656083989227286}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube11
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656083989227286
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656083989227369}
-  m_LocalRotation: {x: -0.29125035, y: 0, z: -0, w: 0.95664686}
-  m_LocalPosition: {x: -0, y: 0.0678325, z: -0.058201957}
-  m_LocalScale: {x: 0.1816474, y: 0.5177652, z: 0.3086018}
-  m_Children:
-  - {fileID: 3427656084283774843}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656083992462575
 GameObject:
@@ -11821,36 +11478,6 @@ Transform:
   m_Father: {fileID: 3427656083438715505}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084072582317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084072582314}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084072582314
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084072582317}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084536323897}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084073638113
 GameObject:
   m_ObjectHideFlags: 0
@@ -11910,36 +11537,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3427656083705051813}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084074582569
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084074582742}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084074582742
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084074582569}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084462516201}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084074737432
@@ -13895,36 +13492,6 @@ Transform:
   m_Father: {fileID: 3427656083600249673}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084283774842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084283774843}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084283774843
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084283774842}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656083989227286}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084286453651
 GameObject:
   m_ObjectHideFlags: 0
@@ -14198,36 +13765,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3427656083749333374}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084317599127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084317599124}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084317599124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084317599127}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656083365527424}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084320651351
@@ -14809,37 +14346,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3427656084814243797}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084367579747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084367579744}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube10
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084367579744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084367579747}
-  m_LocalRotation: {x: 0, y: 0, z: 0.25881907, w: 0.9659259}
-  m_LocalPosition: {x: 0.053619083, y: 0.12546857, z: 0.010832321}
-  m_LocalScale: {x: 0.18381628, y: 0.7877841, z: 0.7877841}
-  m_Children:
-  - {fileID: 3427656084727027562}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084368182535
 GameObject:
@@ -15474,7 +14980,7 @@ GameObject:
   - component: {fileID: 3427656084437185665}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_035:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15833,37 +15339,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3427656083011236060}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084462516200
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084462516201}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084462516201
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084462516200}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.18966544, z: 0.07077307}
-  m_LocalScale: {x: 0.21055688, y: 0.21055688, z: 0.502997}
-  m_Children:
-  - {fileID: 3427656084074582742}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084464019455
 GameObject:
@@ -16362,38 +15837,6 @@ Transform:
   m_Father: {fileID: 3427656084169122330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084501006168
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084501006169}
-  m_Layer: 0
-  m_Name: Penguin
-  m_TagString: Obstacle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084501006169
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084501006168}
-  m_LocalRotation: {x: -0, y: 0.61594045, z: -0, w: 0.7877928}
-  m_LocalPosition: {x: -4, y: -2.7833264, z: 45.238895}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_Children:
-  - {fileID: 3427656084733170672}
-  - {fileID: 3427656083563742907}
-  m_Father: {fileID: 3184899114157000871}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 76.041, z: 0}
 --- !u!1 &3427656084509359554
 GameObject:
   m_ObjectHideFlags: 0
@@ -16698,37 +16141,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3427656083588439638}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084536323896
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084536323897}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084536323897
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084536323896}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04021123, y: 0.2009404, z: 0.012099912}
-  m_LocalScale: {x: 0.15181896, y: 0.15181896, z: 0.15181896}
-  m_Children:
-  - {fileID: 3427656084072582314}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084536414507
 GameObject:
@@ -17671,7 +17083,7 @@ GameObject:
   - component: {fileID: 3427656084616024339}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_075:pCube16
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18131,37 +17543,6 @@ Transform:
   m_Father: {fileID: 3427656084145857640}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084672290386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084672290387}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084672290387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084672290386}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.0778779, z: 0.011754626}
-  m_LocalScale: {x: 0.844636, y: 0.844636, z: 0.844636}
-  m_Children:
-  - {fileID: 3427656084702331280}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084674778147
 GameObject:
   m_ObjectHideFlags: 0
@@ -18485,7 +17866,7 @@ GameObject:
   - component: {fileID: 3427656084691901531}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_035:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18631,36 +18012,6 @@ Transform:
   m_Father: {fileID: 3427656083623233829}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084702331283
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084702331280}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084702331280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084702331283}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084672290387}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084705211749
 GameObject:
   m_ObjectHideFlags: 0
@@ -18783,37 +18134,6 @@ Transform:
   m_Father: {fileID: 3427656084092336905}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084715677934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084715677935}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084715677935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084715677934}
-  m_LocalRotation: {x: 0, y: -0, z: -0.22372521, w: 0.97465223}
-  m_LocalPosition: {x: -0.05111503, y: 0.124834515, z: 0.010832321}
-  m_LocalScale: {x: 0.18381628, y: 0.7877841, z: 0.7877841}
-  m_Children:
-  - {fileID: 3427656082995669083}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084721758300
 GameObject:
   m_ObjectHideFlags: 0
@@ -18874,36 +18194,6 @@ Transform:
   - {fileID: 3427656084087675018}
   m_Father: {fileID: 3427656083623233829}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084727027565
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084727027562}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084727027562
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084727027565}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084367579744}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084731718211
 GameObject:
@@ -18966,47 +18256,6 @@ Transform:
   - {fileID: 3427656084129119054}
   m_Father: {fileID: 3427656082899827163}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084733170675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084733170672}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:group1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084733170672
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084733170675}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3427656084672290387}
-  - {fileID: 3427656083801856696}
-  - {fileID: 3427656083173404266}
-  - {fileID: 3427656084892430744}
-  - {fileID: 3427656083365527424}
-  - {fileID: 3427656084536323897}
-  - {fileID: 3427656084976785351}
-  - {fileID: 3427656084462516201}
-  - {fileID: 3427656084715677935}
-  - {fileID: 3427656084367579744}
-  - {fileID: 3427656083989227286}
-  m_Father: {fileID: 3427656084501006169}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084736778454
 GameObject:
@@ -19774,36 +19023,6 @@ Transform:
   m_Father: {fileID: 3427656085009088321}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084835979940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084835979941}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:transform8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084835979941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084835979940}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3427656084976785351}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084838768229
 GameObject:
   m_ObjectHideFlags: 0
@@ -19941,7 +19160,7 @@ GameObject:
   - component: {fileID: 3427656084842712973}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_074:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20230,7 +19449,7 @@ GameObject:
   - component: {fileID: 3427656084869412434}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_035:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20589,37 +19808,6 @@ Transform:
   - {fileID: 3427656084238873681}
   m_Father: {fileID: 3427656082899827163}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084892430747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084892430744}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084892430744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084892430747}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.029458778, y: 0.2009404, z: 0.012099912}
-  m_LocalScale: {x: 0.33107948, y: 0.33107948, z: 0.33107948}
-  m_Children:
-  - {fileID: 3427656083418713684}
-  m_Father: {fileID: 3427656084733170672}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084894487354
 GameObject:
@@ -21309,7 +20497,7 @@ GameObject:
   - component: {fileID: 3427656084965707290}
   m_Layer: 0
   m_Name: Lowpoly_Christmas_Pack_035:pCube8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21452,7 +20640,7 @@ Transform:
   - {fileID: 3427656083008625404}
   - {fileID: 3427656084687043968}
   m_Father: {fileID: 3184899114157000871}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -89.76, z: 0}
 --- !u!1 &3427656084975494616
 GameObject:
@@ -21483,37 +20671,6 @@ Transform:
   m_Children:
   - {fileID: 3427656084047866770}
   m_Father: {fileID: 3427656083823591536}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3427656084976785350
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3427656084976785351}
-  m_Layer: 0
-  m_Name: Lowpoly_Christmas_Pack_088:pCube7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3427656084976785351
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427656084976785350}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029606072, y: 0.2009404, z: 0.012099912}
-  m_LocalScale: {x: 0.33107948, y: 0.33107948, z: 0.33107948}
-  m_Children:
-  - {fileID: 3427656084835979941}
-  m_Father: {fileID: 3427656084733170672}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3427656084980389712
@@ -22275,7 +21432,7 @@ GameObject:
   - component: {fileID: 3028836653685720975}
   m_Layer: 6
   m_Name: IceFloor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22357,6 +21514,68 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1190006450149745100
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3184899114157000871}
+    m_Modifications:
+    - target: {fileID: 5070678475073946785, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_Name
+      value: Penguin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7833264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7877928
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.61594045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 76.041
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+--- !u!4 &6259277506417686861 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5070678475074377857, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
+  m_PrefabInstance: {fileID: 1190006450149745100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3427656083410597560
 PrefabInstance:
   m_ObjectHideFlags: 0

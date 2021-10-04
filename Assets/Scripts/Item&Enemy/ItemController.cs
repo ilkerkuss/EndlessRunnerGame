@@ -27,8 +27,7 @@ public class ItemController : MonoBehaviour
  
     void Update()
     {
-        _coins = GameObject.FindGameObjectsWithTag("Coin");
-        RotateItem(_coins);
+
     }
 
 
@@ -67,16 +66,4 @@ public class ItemController : MonoBehaviour
         
     }
 
-
-
-    private void RotateItem(GameObject[] coinList)
-    {
-        Vector3 rotationVector = new Vector3(0, 0, -20 * Time.deltaTime);
-
-        foreach (var item in coinList)
-        {
-            item.transform.Rotate(rotationVector);
-        }
-        
-    }
 }

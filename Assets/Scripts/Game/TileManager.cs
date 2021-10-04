@@ -24,14 +24,14 @@ public class TileManager : MonoBehaviour
             Instance = this;
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         Init();
  
     }
 
-    // Update is called once per frame
+
     void Update()
     {
  
@@ -41,9 +41,6 @@ public class TileManager : MonoBehaviour
                 DeleteTile(); // yeni tile oluþtuðunda ilk oluþturulan tile silinir
             }
 
-     
-
-
     }
 
 
@@ -52,7 +49,6 @@ public class TileManager : MonoBehaviour
 
         GameObject TileGO=Instantiate(_tileList[tileIndex], transform.forward * _nextSpawn, transform.rotation);
         TileGO.transform.parent = _parentObject.transform;
-        //_activeTiles.Add(TileGO);
 
         _nextSpawn += _tileLength;
 
@@ -62,13 +58,11 @@ public class TileManager : MonoBehaviour
     private void DeleteTile()
     {
         Destroy(_parentObject.transform.GetChild(0).gameObject);
-        //_activeTiles.RemoveAt(0);
     }
 
     private void Init()
     {
-        //Debug.Log("TileManager INIT");
-        //_activeTiles = new List<GameObject>();
+
         _nextSpawn = 0;
 
         // Generate beginning parkour

@@ -18,10 +18,9 @@ public class PlayerController : MonoBehaviour
     private int _movementLane ; //0:left 1:middle 2:right
 
     [SerializeField] private float _jumpForce = 5f;
-    private float _gravityForce = -9.81f;
 
     private Vector3 _playerPos;
-    public static bool _isDead;
+   // public static bool _isDead;
 
     private Rigidbody _rb;
 
@@ -35,22 +34,12 @@ public class PlayerController : MonoBehaviour
     private IEnumerator _takeStar;
     private IEnumerator _takeShoe;
 
-    // swerve controls
 
-    private SwerveInputSystem _swerveInputSystem;
-    [SerializeField] private float swerveSpeed = 0.5f;
-    [SerializeField] private float maxSwerveAmount = 1f;
+    private LevelManager _levelManager;
 
-    //playermanagera taþýnanlar
-    /*
-    //player altýn sayýsý ve skoru
-    private int _scoreOfPlayer;
-    private int _coinsNumberOfPlayer;
-    
+    public delegate void PlayerEvents();
+    public static event PlayerEvents PlayerDead;
 
-    private float _increaseAmount; //score için artýþ deðeri
-    private int _coinValue;  //coinlerin deðeri
-    */
 
     private void Awake()
     {
@@ -58,8 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             Instance = this;
         }
-
-        _swerveInputSystem = GetComponent<SwerveInputSystem>();
+     
 
     }
 
@@ -67,6 +55,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Init();
+
+        _levelManager = LevelManager.Instance;
     }
 
 
@@ -75,35 +65,23 @@ public class PlayerController : MonoBehaviour
         //IsGrounded
         _isGrounded = Physics.CheckSphere(transform.position, 1f, _groundLayer);
 
-        //Debug.Log("Yerde mi:" + _isGrounded);
+        Debug.Log(_movementLane);
 
 
-    }
-
-    private void FixedUpdate()
-    {
-        if (!_isDead && LevelManager.IsGameStarted && !LevelManager.IsGamePaused) // oyun baþlatýldý ve karakter ölü deðil ise  ** ve oyun durdurulmamýþ ise
+        if (_levelManager.GameState == LevelManager.GameStates.IsGamePlaying ) // oyun baþlatýldý ve karakter ölü deðil ise  ** ve oyun durdurulmamýþ ise
         {
             Move();
             SpeedUpCharacter();
-            //IncreaseScore();
-
-            /*
-            float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
-            swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
-            transform.Translate(swerveAmount, 0, 0);
-            */
 
         }
 
     }
 
+    #region Movement Functions
 
     private void Jump()
     {
         _rb.velocity = Vector3.up * _jumpForce;
-        //_direction.y = _jumpForce;
-        Debug.Log("Zýpla");
 
         _playerAnimator.SetTrigger("IsJumped");
 
@@ -111,142 +89,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-
-    private IEnumerator Slide()
-    {
-        Debug.Log("kay kay");
-        yield return new WaitForSeconds(0.25f / Time.timeScale);
-
-        _playerAnimator.SetBool("IsSlide", true);
-        _chrCollider.center = new Vector3(0, -0.01f, 0);
-        _chrCollider.height = 0;
-
-        AudioController.Instance.PlaySound("SlideSound");
-
-        
-
-        yield return new WaitForSeconds((1.5f - 0.25f) / Time.timeScale);
-
-        _chrCollider.center = Vector3.zero;
-        _chrCollider.height = 0.032f;
-
-        _playerAnimator.SetBool("IsSlide", false);
-    }
-
-
-    private void OnCollisionEnter(Collision hit)
-    {
-        if (hit.collider.CompareTag("Obstacle"))
-        {
-            //_direction.z = 0;
-            _rb.velocity = Vector3.zero;
-            _isDead = true;
-            LevelManager.IsGameOver = true;
-
-            _playerAnimator.SetBool("IsRunning",false);
-
-            AudioController.Instance.PlaySound("GameOver");
-
-            LevelManager.Instance.ShowGameOver();
-        }
-
-
-        if (hit.collider.CompareTag("Coin"))
-        {
-            //_coinsNumberOfPlayer += 1;
-            PlayerManager.Instance.IncreaseNumberOfCoin();
-            //_scoreOfPlayer += 50;
-            Destroy(hit.gameObject);
-
-            AudioController.Instance.PlaySound("PickUpCoin");
-        }
-
-
-        if (hit.collider.CompareTag("Item"))
-        {
-            //Debug.Log(hit.collider.name);
-            if (hit.collider.name.Equals("Shoe"))
-            {
-                if (_takeStar != null)
-                {
-                    StopCoroutine(_takeShoe);
-                }
-
-                _takeShoe = ItemController.Instance.TakeShoe();
-                StartCoroutine(_takeShoe);
-
-            }
-            if (hit.collider.name.Equals("Star"))
-            {
-
-                if (_takeStar!=null)
-                {
-                    StopCoroutine(_takeStar);
-                }
-
-                _takeStar = ItemController.Instance.TakeStar();
-                StartCoroutine(_takeStar);
-            }
-            Destroy(hit.gameObject);
-        }
-        // Debug.Log(hit.gameObject.name);
-    }
-
-
-
-    public Vector3 GetPlayerPosition()
-    {
-        return _playerPos;
-    }
-
-
-    public void CharacterDead() //ölünce position sýfýrla ve baþlangýç fonk çaðýr
-    {
-
-        transform.position = _playerPos;
-        LevelManager.IsGameOver = true;
-        LevelManager.IsGameStarted = false;
-
-        Init();
-
-        // _direction.z = _forwardSpeed;
-    }
-
-
-    
-
-    public void Init()
-    {
-        //Debug.Log("PlayerController INIT");
-        _forwardSpeed = 5f;
-        _movementLane = 1;
-        _rb = GetComponent<Rigidbody>();
-        _isDead = false;
-        _playerPos = transform.position;
-
-        _chrCollider = GetComponent<CapsuleCollider>();
-
-        _playerAnimator = GetComponent<Animator>();
-
-        /*
-        _scoreOfPlayer = 0;
-        _coinsNumberOfPlayer = 0;
-        
-
-        _increaseAmount = 0;
-        _coinValue = 50;
-        */
-    }
-
-
     private void Move()
     {
 
         var moveDir = Vector3.forward * _forwardSpeed * Time.deltaTime;
         transform.position += moveDir;
 
-        
+
 
         _playerAnimator.SetBool("IsRunning", true);
 
@@ -281,30 +130,19 @@ public class PlayerController : MonoBehaviour
                 {
                     StartCoroutine(Slide());
                 }
-            }/*
-            else
-            {
-                //transform.position += Vector3.up * _gravityForce * Time.deltaTime;
-                _rb.velocity = Vector3.down * (_gravityForce * Time.deltaTime);
-            } */
+            }
 
             if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
             {
-                Debug.Log("Sola kay");
-               
-             
+
                 if (_movementLane > 0)
                 {
+                    transform.position += Vector3.left * _laneDistance;
                     _movementLane--;
-                    //transform.position += Vector3.left * _laneDistance;
-
-                   
-                    //transform.Translate(swerveAmount, 0, 0);
-
 
                     AudioController.Instance.PlaySound("LaneChangeSound");
                 }
-                if (_movementLane <= 0)
+                else
                 {
                     _movementLane = 0;
                 }
@@ -312,44 +150,161 @@ public class PlayerController : MonoBehaviour
             }
             if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
             {
-                Debug.Log("Saða kay");
-               
+
                 if (_movementLane < 2)
                 {
+                    transform.position += Vector3.right * _laneDistance;
                     _movementLane++;
-                    // transform.position += Vector3.right * _laneDistance;
-                    //transform.Translate(swerveAmount, 0, 0);
-
 
                     AudioController.Instance.PlaySound("LaneChangeSound");
                 }
-                else if (_movementLane >= 2)
+                else
                 {
                     _movementLane = 2;
                 }
 
             }
 
-
-            //Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-
-            /*
-            if (_movementLane == 0)
-            {
-                //targetPosition += Vector3.left * _laneDistance;
-                transform.position += Vector3.left * _laneDistance;
-            }
-            else if (_movementLane == 2)
-            {
-                //targetPosition += Vector3.right * _laneDistance;
-                transform.position += Vector3.left * _laneDistance;
-            }
-            */
-
-            //transform.position = Vector3.Lerp(transform.position,targetPosition,80* Time.deltaTime);
-
-
         }
+    }
+
+    private IEnumerator Slide()
+    {
+
+        yield return new WaitForSeconds(0.25f / Time.timeScale);
+
+        _playerAnimator.SetBool("IsSlide", true);
+        _chrCollider.center = new Vector3(0, -0.01f, 0);
+        _chrCollider.height = 0;
+
+        AudioController.Instance.PlaySound("SlideSound");
+
+
+
+        yield return new WaitForSeconds((1.5f - 0.25f) / Time.timeScale);
+
+        _chrCollider.center = Vector3.zero;
+        _chrCollider.height = 0.032f;
+
+        _playerAnimator.SetBool("IsSlide", false);
+    }
+
+
+
+    #endregion
+
+    #region Get/Set Functions About Player 
+
+    //Item alýndýðýnda kullanýlan player func.
+    //Shoe item func.
+    public float GetPlayerSpeed()
+    {
+        return _forwardSpeed;
+    }
+
+    public void SetPlayerSpeed(float Speed)
+    {
+        _forwardSpeed = Speed;
+    }
+
+    public float GetPlayerJumpForce()
+    {
+        return _jumpForce;
+    }
+
+    public void SetPlayerJumpForce(float ForceAmount)
+    {
+        _jumpForce = ForceAmount;
+    }
+
+    #endregion
+
+
+    private void OnCollisionEnter(Collision hit)
+    {
+        if (hit.collider.CompareTag("Obstacle"))
+        {
+
+            _rb.velocity = Vector3.zero;
+
+            PlayerDead?.Invoke();
+
+
+            _playerAnimator.SetBool("IsRunning",false);
+
+            AudioController.Instance.PlaySound("GameOver");
+
+            LevelManager.Instance.GameOver();
+        }
+
+
+        if (hit.collider.CompareTag("Coin"))
+        {
+            PlayerManager.Instance.IncreaseNumberOfCoin();
+
+            Destroy(hit.gameObject);
+
+            AudioController.Instance.PlaySound("PickUpCoin");
+        }
+
+
+        if (hit.collider.CompareTag("Item"))
+        {
+            if (hit.collider.name.Equals("Shoe"))
+            {
+                if (_takeStar != null)
+                {
+                    StopCoroutine(_takeShoe);
+                }
+
+                _takeShoe = ItemController.Instance.TakeShoe();
+                StartCoroutine(_takeShoe);
+
+            }
+            if (hit.collider.name.Equals("Star"))
+            {
+
+                if (_takeStar!=null)
+                {
+                    StopCoroutine(_takeStar);
+                }
+
+                _takeStar = ItemController.Instance.TakeStar();
+                StartCoroutine(_takeStar);
+            }
+            Destroy(hit.gameObject);
+        }
+    }
+
+
+
+    public Vector3 GetPlayerPosition()
+    {
+        return _playerPos;
+    }
+
+
+    public void CharacterDead() //ölünce position sýfýrla ve baþlangýç fonk çaðýr
+    {
+        transform.position = _playerPos;
+        Init();
+
+    }
+
+
+
+    public void Init()
+    {
+
+        _forwardSpeed = 5f;
+        _movementLane = 1;
+        _rb = GetComponent<Rigidbody>();
+        _playerPos = transform.position;
+
+        _chrCollider = GetComponent<CapsuleCollider>();
+
+        _playerAnimator = GetComponent<Animator>();
+
     }
 
 
@@ -362,76 +317,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    // playermanager taþýnanlar
-/*
- 
-//player score and coin stats
-    public int GetNumberOfCoin()
-    {
-        return _coinsNumberOfPlayer;
-
-    }
-
-    public int GetScoreOfPlayer()
-    {
-        return _scoreOfPlayer;
-
-    }
-
-
-
-    public void IncreaseScore() //ilerleme(distance) deðerine ve alýnan coine göre puan arttýrma
-    {
-        _increaseAmount =  transform.position.z;
-        //Debug.Log("increase amount : "+Mathf.Round(_increaseAmount));
-
-        _scoreOfPlayer =  (int)Mathf.Round(_increaseAmount);
-        _scoreOfPlayer += (_coinsNumberOfPlayer * _coinValue);
-
-
-    }
-
-*/
-
-
-
-
-    //Item alýndýðýnda kullanýlan player func.
-    //Shoe item func.
-    public float GetPlayerSpeed()
-    {
-        return _forwardSpeed;
-    }
-
-    public void SetPlayerSpeed(float Speed)
-    {
-         _forwardSpeed=Speed;
-    }
-
-    public float GetPlayerJumpForce()
-    {
-        return _jumpForce;
-    }
-
-    public void SetPlayerJumpForce(float ForceAmount)
-    {
-         _jumpForce=ForceAmount;
-    }
-
-
-
-//Playermanagera taþýnanlar
-    /*
-    //Star item func.
-    public int GetCoinValue()
-    {
-        return _coinValue;
-    }
-    public void SetCoinValue(int Value)
-    {
-        _coinValue= Value;
-    }
-    */
 
     
 }

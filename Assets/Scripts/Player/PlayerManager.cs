@@ -31,14 +31,13 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
         Init();
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
@@ -55,7 +54,7 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (LevelManager.IsGameStarted && !LevelManager.IsGamePaused)
+        if (LevelManager.Instance.GameState == LevelManager.GameStates.IsGamePlaying)
         {
             IncreaseScore();
         }
@@ -96,6 +95,8 @@ public class PlayerManager : MonoBehaviour
     {
         _coinsOfPlayer += 1;
 
+        InGameCanvasController.Instance.ShowTakenCoinNumber(_coinsOfPlayer);
+
     }
 
 
@@ -103,7 +104,6 @@ public class PlayerManager : MonoBehaviour
     public void IncreaseScore() //ilerleme(distance) deðerine ve alýnan coine göre puan arttýrma
     {
         _increaseAmount = GameObject.FindGameObjectWithTag("Player").transform.position.z;
-        //Debug.Log("increase amount : "+Mathf.Round(_increaseAmount));
 
         _scoreOfPlayer = (int)Mathf.Round(_increaseAmount);
         _scoreOfPlayer += (_coinsOfPlayer * _coinValue);
@@ -117,6 +117,9 @@ public class PlayerManager : MonoBehaviour
         _increaseAmount = 0;
         _coinsOfPlayer = 0;
         _coinValue = 50;
+
+        InGameCanvasController.Instance.ShowTakenCoinNumber(_coinsOfPlayer);
+
     }
 
     public void ActivateHighScoreUI()
@@ -130,24 +133,6 @@ public class PlayerManager : MonoBehaviour
         _totalCoinsText.gameObject.SetActive(false);
     }
     
-    /*
-    public void ResetGold()
-    {
-        int resetNum = 0;
-        PlayerPrefs.SetInt("TotalCoins",resetNum);
-    }
-
-    */
-
-
-
-
-
-
-
-
-
-
 
 
 

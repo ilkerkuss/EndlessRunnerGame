@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 5070678475080247809}
   - component: {fileID: 6526330201752539807}
   - component: {fileID: 5074363989049195145}
-  - component: {fileID: 2949587319269819219}
+  - component: {fileID: 3421280154203110283}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Obstacle
@@ -297,7 +297,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &2949587319269819219
+--- !u!114 &3421280154203110283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,12 +306,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5070678475073946795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d77397b342b2ec242ae52ade5fe1043d, type: 3}
+  m_Script: {fileID: 11500000, guid: 60efc73b6159b95468a76ed188f67ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &5070678475073946797
 GameObject:
   m_ObjectHideFlags: 0

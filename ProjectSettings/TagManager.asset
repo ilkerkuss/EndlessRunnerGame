@@ -9,6 +9,7 @@ TagManager:
   - Begin
   - Coin
   - MainMenu
+  - Ground
   layers:
   - Default
   - TransparentFX

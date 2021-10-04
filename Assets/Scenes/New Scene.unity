@@ -210,14 +210,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: _groundLayerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d0b9416fe7ba64d86cc8eb7e987355, type: 3}
 --- !u!1 &429438069 stripped
@@ -683,7 +675,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547818050}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66e1033eb0bee3c4a9a255d2eb72a963, type: 3}
   m_Name: 
@@ -693,6 +685,8 @@ MonoBehaviour:
     m_Bits: 64
   _forwardSpeed: 0
   _jumpForce: 3
+  swerveSpeed: 0.5
+  maxSwerveAmount: 1
 --- !u!65 &1547818052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -792,7 +786,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547818050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 278c9ebc1294d7b4f959ecfdd34a0085, type: 3}
   m_Name: 

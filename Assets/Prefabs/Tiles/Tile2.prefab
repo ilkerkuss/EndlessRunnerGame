@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 1512118193196539528}
   m_Layer: 6
   m_Name: IceFloor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

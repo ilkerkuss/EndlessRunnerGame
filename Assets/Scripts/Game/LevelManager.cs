@@ -7,23 +7,18 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
-    public static bool IsGameOver;
-    public static bool IsGameStarted;
-    public static bool IsGamePaused;
+    public enum GameStates
+    {
+        IsGameOver,
+        IsGameLoaded,
+        IsGamePlaying,
+        IsGamePaused
 
-    [SerializeField] private GameObject _gameOverPanel;
-    [SerializeField] private GameObject _PausePanel;
+    }
+
+    public GameStates GameState;
+
     [SerializeField] private GameObject _player;
-    [SerializeField] private Text _startingText;
-    [SerializeField] private Text _coinsText;
-    [SerializeField] private Text _scoreText;
-    [SerializeField] private Text _endGameCoinsText;
-    [SerializeField] private Text _endGameScoreText;
-  
-    private GameObject _mainMenu;
-
-    private int _startCounter;
-
 
     private void Awake()
     {
@@ -35,216 +30,92 @@ public class LevelManager : MonoBehaviour
         
     }
 
-
-
     void Start()
     {
-        _mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
         Init();
-
     }
-
-
 
     void Update()
     {
-        if (!IsGameOver && !IsGamePaused)
+        if (GameState == GameStates.IsGamePlaying)
         {
-            StartGame();
-            ShowTakenCoinNumber();
-            ShowScoreOfPlayer();
-
+           InGameCanvasController.Instance.ShowScoreOfPlayer(PlayerManager.Instance.GetScoreOfPlayer());
         }
-        Debug.Log("over,pause,start" + LevelManager.IsGameOver + LevelManager.IsGamePaused + LevelManager.IsGameStarted);
 
     }
 
+    private void OnEnable()
+    {
+        PlayerController.PlayerDead += GameOver;
+    }
+    private void OnDisable()
+    {
+        PlayerController.PlayerDead -= GameOver;
+
+    }
 
 
 
     public void Init()
     {
-
-        IsGameOver = false;
-        IsGameStarted = false;
-        IsGamePaused = false;
-
-        _startingText.gameObject.SetActive(true);
-        _coinsText.gameObject.SetActive(true);
-        _scoreText.gameObject.SetActive(true);
-
-        _startCounter = 3;
-        //  Time.timeScale = 1;
+        GameState = GameStates.IsGameLoaded;
     }
-
-
 
 
 
     public void Replay()
     {
-        
         _player.GetComponent<PlayerController>().CharacterDead();
+
         TileManager.Instance.ResetTiles();
 
-        //Hide();
-        _gameOverPanel.SetActive(false);
+        CanvasController.Instance.GameOverPanel.HidePanel();
+
+        CanvasController.Instance.PausePanel.ShowPanel();
 
         AudioController.Instance._sounds[0].AudioSource.Play(); //background sound çalma.
 
         PlayerManager.Instance.ResetScores();
-        PlayerManager.Instance.ActivateHighScoreUI();
 
-        ActivateInGameUI();
+        PlayerManager.Instance.ActivateHighScoreUI();
 
         Init(); 
 
     }
 
-    /*
-    public void Hide()
-    {
-        _gameOverPanel.SetActive(false);
-        //Time.timeScale = 1;
-    }
-    */
 
-    public void ShowGameOver()
+    public void GameOver()
     {
-        //Time.timeScale = 0;
-        //IsGameOver = true;
-        //IsGameStarted = false;
+
+        GameState = GameStates.IsGameOver;
 
         AudioController.Instance._sounds[0].AudioSource.Stop();  //Background sesini durdurur. replay ile tekrar aktif edilir.
 
-        _gameOverPanel.SetActive(true);
+        CanvasController.Instance.GameOverPanel.ShowPanel();
 
-
-        SetEndGameScores();
+        EndGameCanvasController.Instance.SetEndGameScores();
 
         PlayerManager.Instance.DisableHighScoreUI();
 
-        DisableInGameUI();
+        CanvasController.Instance.PausePanel.HidePanel();
+
 
     }
 
     public void StartGame()
     {
-        if (Input.GetMouseButtonDown(0) && !IsGameStarted)
-        {
-            StartCoroutine(CountForStart());
+        GameState = GameStates.IsGamePlaying;
 
-        }
-
-    }
-
-    public IEnumerator CountForStart()
-    {
-        Debug.Log("geri sayým baþladý");
-        int counter = _startCounter;
-        
-        while (counter > 0)
-        {
-            _startingText.text = counter.ToString();
-            yield return new WaitForSeconds(1f);
-            counter--;
-
-        }
-
-        _startingText.gameObject.SetActive(false);
-        StopCoroutine(CountForStart());
-
-        IsGameStarted = true;
-
+        CanvasController.Instance.InGamePanel.ShowPanel();
     }
 
 
-
-    public void ShowTakenCoinNumber()
+    public void PlayGame() // After press play game button
     {
-        //Debug.Log(PlayerController.Instance.GetNumberOfCoin());
-        _coinsText.text = "Coins :"+ PlayerManager.Instance.GetNumberOfCoin().ToString();
-    }
-
-    public void ShowScoreOfPlayer()
-    {
-       // Debug.Log(PlayerController.Instance.GetScoreOfPlayer());
-        _scoreText.text = "Score :"+ PlayerManager.Instance.GetScoreOfPlayer().ToString();
-    }
-
-
-
-    public void PlayGame()
-    {
-        _mainMenu.SetActive(false);
         Replay();
         StartGame();
         
     }
-
-    public void BackToMenu()
-    {
-
-        _mainMenu.SetActive(true);
-        _gameOverPanel.SetActive(false);
-
-        
-    }
-
-    public void PauseGame()
-    {
-        if (!IsGameOver && !IsGamePaused)
-        {
-            _PausePanel.SetActive(true);
-
-            Time.timeScale = 0;
-            IsGamePaused = true;
-
-            
-
-        }
-    }
-
-    public void ResumeGame()
-    {
-        if (!IsGameOver && IsGamePaused)
-        {
-            _PausePanel.SetActive(false);
-
-            Time.timeScale = 1;
-            IsGamePaused = false;
-
-            
-        }
-    }
-
-
-    private void SetEndGameScores()
-    {
-        _endGameCoinsText.text = "Taken Coins " + PlayerManager.Instance.GetNumberOfCoin().ToString();
-        _endGameScoreText.text = "End Game Score " + PlayerManager.Instance.GetScoreOfPlayer().ToString();
-    }
-
-
-
-    private void DisableInGameUI()
-    {
-        _coinsText.gameObject.SetActive(false);
-        _scoreText.gameObject.SetActive(false);
-    }
-
-    private void ActivateInGameUI()
-    {
-        _startingText.text = "TAP TO START";
-        _startingText.gameObject.SetActive(true);
-
-        _coinsText.gameObject.SetActive(true);
-        _scoreText.gameObject.SetActive(true);
-    }
-
-
-
-
 
 
 }

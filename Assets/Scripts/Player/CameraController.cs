@@ -18,9 +18,5 @@ public class CameraController : MonoBehaviour
         Vector3 newPosition = new Vector3(transform.position.x, transform.position.y, _target.transform.position.z+_offset.z);
         transform.position = Vector3.Lerp(transform.position,newPosition,0.5f);
 
-        //transform.position = newPosition;
-        //Debug.Log(_offset);
-
-
     }
 }
